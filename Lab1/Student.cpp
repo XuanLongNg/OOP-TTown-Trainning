@@ -9,7 +9,7 @@ class Student{
     public:
     Student(){
         id=0;
-        name="";
+        name="No Name";
         mark=0;
     }
     Student(int i,string n,int m){
@@ -27,7 +27,6 @@ class Student{
         cout<<"Name: "<<name<<endl;
         cout<<"Mark: "<<mark<<endl;
     }
-    
 };
 bool comp(Student a,Student b){
     return a.mark>b.mark;
