@@ -33,7 +33,7 @@ vector<Customer> Customer::Top10_customers(vector<Customer> customers){
     if(customers.size()<10) k=customers.size();
     For(i,0,k){
         top10.push_back(customers[i]);
-    }
+    } 
     return top10;
 }
 void Customer::input(){
