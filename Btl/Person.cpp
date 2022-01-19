@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string.h>
 #include<algorithm>
+#include<vector>
 #pragma once
 #define For(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
