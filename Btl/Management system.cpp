@@ -1,5 +1,6 @@
 #include "Customer.cpp"
 #include "Staff.cpp"
+#pragma once
 class Management_system:public Customer,public Staff{
     private:
     vector<Customer> customers;
@@ -21,7 +22,6 @@ class Management_system:public Customer,public Staff{
     void outputCus();
     void outputSta();
 };
-bool sort_by_point(Customer a,Customer b){ return a.Get_Accumulated_points()>b.Get_Accumulated_points();}
 Customer Management_system::Find_the_customer_max_points(){
     Customer max=customers[0];
     For(i,0,customers.size()){
@@ -57,7 +57,9 @@ void Management_system::inputCus(){
     cout<<"Nhap so luong khac hang: "<<endl;
     cin>>n;
     For(i,0,n){
-        customers[i].input();
+        Customer k;
+        k.input();
+        customers.push_back(k);
     }
 }
 void Management_system::inputSta(){
@@ -65,7 +67,9 @@ void Management_system::inputSta(){
     cout<<"Nhap so luong nhan vien: "<<endl;
     cin>>m;
     For(i,0,m){
-        staffs[i].input();
+        Staff k;
+        k.input();
+        staffs.push_back(k);
     }
 }
 void Management_system::input(){
@@ -74,11 +78,19 @@ void Management_system::input(){
 }
 void Management_system::outputCus(){
     cout<<"Danh sach so luong hang hang"<<endl;
-    For(i,0,customers.size()) customers[i].output();
+    For(i,0,customers.size()){
+        cout<<"Khach hang thu "<<i+1<<":"<<endl;
+        customers[i].output();
+        cout<<endl;
+    }
 }
 void Management_system::outputSta(){
     cout<<"Danh sach so luong nhan vien"<<endl;
-    For(i,0,staffs.size()) staffs[i].output();
+    For(i,0,staffs.size()){
+        cout<<"Nhan vien thu "<<i+1<<":"<<endl;
+        staffs[i].output();
+        cout<<endl;
+    }
 }
 void Management_system::output(){
     outputCus();

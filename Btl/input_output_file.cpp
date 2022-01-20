@@ -4,6 +4,7 @@
 #include "Management system.cpp"
 #include <conio.h>
 #include <fstream>
+#pragma once
 using namespace std;
 Management_system a;
 int toInt(string k){
@@ -78,7 +79,7 @@ void DocSta(){
 void GhiCus(){
 	vector<Customer> h;
 	ofstream output;
-	output.open("Trung gian.txt",ios::out);
+	output.open("Khach hang.txt",ios::out);
 	h=a.Get_Customers();
 	For(i,0,h.size()){
 		output<<h[i].Get_Name()<<endl;
@@ -92,7 +93,7 @@ void GhiCus(){
 void GhiSta(){
 	vector<Staff> h;
 	ofstream output;
-	output.open("Trung gian.txt",ios::out);
+	output.open("Nhan Vien.txt",ios::out);
 	h=a.Get_Staffs();
 	For(i,0,h.size()){
 		output<<h[i].Get_Name()<<endl;
@@ -102,11 +103,5 @@ void GhiSta(){
 		output<<h[i].Get_Position()<<endl;
 	}
 	output.close();
-}
-int main()
-{
-	DocSta();
-	GhiSta();
-	cout<<"Done!"<<endl;
 }
 

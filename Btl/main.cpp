@@ -4,7 +4,6 @@
 #include "Management system.cpp"
 #include "input_output_file.cpp"
 #include <conio.h>
-Management_system a;
 void Go(){
 	printf("\nPress ESC to end program or Press any key to continue...\n");
 	char m;
@@ -95,9 +94,14 @@ void dichvu(){
 				cout<<"Vui long nhap lai"<<endl;
 				break;
 		}
+		GhiCus();
+    	GhiSta();
 		cout<<"Done!"<<endl;
 		Go();
   	}
 }
 int main(){
+    DocCus();
+    DocSta();
+    dichvu();
 }

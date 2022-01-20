@@ -39,16 +39,16 @@ Person::Person(string name,string date_of_birth,string address,string email){
     this->email=email;
 }
 void Person::input(){
-    cout<<"Enter your name: ";
+    cout<<"Enter name: ";
     scanf("\n");
     getline(cin,name);
-    cout<<"Enter your birthday: ";
+    cout<<"Enter birthday: ";
     scanf("\n");
     getline(cin,date_of_birth);
-    cout<<"Enter your address: ";
+    cout<<"Enter address: ";
     scanf("\n");
     getline(cin,address);
-    cout<<"Enter your email: ";
+    cout<<"Enter email: ";
     scanf("\n");
     getline(cin,email);
 }
