@@ -1,0 +1,6 @@
+Coffee
+30000
+Tea
+30000
+Nuoc loc
+5000

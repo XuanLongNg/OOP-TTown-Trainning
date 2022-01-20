@@ -1,12 +1,15 @@
-#include "Person.cpp"
-#include "Customer.cpp"
-#include "Staff.cpp"
 #include "Management system.cpp"
 #include <conio.h>
 #include <fstream>
 #pragma once
 using namespace std;
 Management_system a;
+void Go(){
+	printf("\nPress ESC to end program or Press any key to continue...\n");
+	char m;
+	m=getch();
+	if(m==27) exit(0);
+}
 int toInt(string k){
 	int h=0;
 	For(i,0,k.size()){
@@ -76,6 +79,72 @@ void DocSta(){
 	}
 	input.close();
 }
+void DocDri(){
+	Drinks h;
+	int f=0;
+	ifstream input;
+	input.open("Do uong.txt",ios::in);
+	while(!input.eof()){
+		string k;
+		getline(input,k);
+		switch(f){
+			case 0:
+			h.Set_Drink(k);
+			break;
+			case 1:
+			h.Set_Price(toInt(k));
+			f=-1;
+			a.Add_drink(h);
+			break;
+		}	 
+	    f++;	
+	}
+	input.close();
+}
+void DocTop(){
+	Topping h;
+	int f=0;
+	ifstream input;
+	input.open("Topping.txt",ios::in);
+	while(!input.eof()){
+		string k;
+		getline(input,k);
+		switch(f){
+			case 0:
+			h.Set_Topping(k);
+			break;
+			case 1:
+			h.Set_Price(toInt(k));
+			f=-1;
+			a.Add_topping(h);
+			break;
+		}	 
+	    f++;	
+	}
+	input.close();
+}
+void DocAcc(){
+	Email h;
+	int f=0;
+	ifstream input;
+	input.open("Account.txt",ios::in);
+	while(!input.eof()){
+		string k;
+		getline(input,k);
+		switch(f){
+			case 0:
+			h.Set_Email(k);
+			break;
+			case 1:
+			h.Set_Pass(k);
+			f=-1;
+			a.Add_email(h);
+			break;
+		}	 
+	    f++;	
+	}
+	input.close();
+}
 void GhiCus(){
 	vector<Customer> h;
 	ofstream output;
@@ -104,4 +173,50 @@ void GhiSta(){
 	}
 	output.close();
 }
-
+void GhiDri(){
+	vector<Drinks> h;
+	ofstream output;
+	output.open("Do uong.txt",ios::out);
+	h=a.Get_Drinks();
+	For(i,0,h.size()){
+		output<<h[i].Get_Drink()<<endl;
+		output<<h[i].Get_Price()<<endl;
+	}
+	output.close();
+}
+void GhiTop(){
+	vector<Topping> h;
+	ofstream output;
+	output.open("Topping.txt",ios::out);
+	h=a.Get_Topping();
+	For(i,0,h.size()){
+		output<<h[i].Get_Topping()<<endl;
+		output<<h[i].Get_Price()<<endl;
+	}
+	output.close();
+}
+void GhiAcc(){
+	vector<Email> h;
+	ofstream output;
+	output.open("Account.txt",ios::out);
+	h=a.Get_Email();
+	For(i,0,h.size()){
+		output<<h[i].Get_Email()<<endl;
+		output<<h[i].Get_Pass()<<endl;
+	}
+	output.close();
+}
+void DocFile(){
+	DocCus();
+	DocSta();
+	DocDri();
+	DocTop();
+	DocAcc();
+}
+void GhiFile(){
+	GhiCus();
+	GhiSta();
+	GhiDri();
+	GhiTop();
+	GhiAcc();
+}
