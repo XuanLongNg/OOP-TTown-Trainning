@@ -1,6 +1,7 @@
 #include "Person.cpp"
 #include "Customer.cpp"
 #include "Staff.cpp"
+#include "Management system.cpp"
 /*
 int main(){
     Person a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com"),b;
@@ -28,9 +29,22 @@ int main(){
     
 }
 */
+/*
 int main(){
     Staff a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com",1000000,10,3*20000*30,10000000,"Nhan Vien","12/1/2020"),b;
     a.output();
     b.output();
 }
-
+*/
+int main(){
+    Customer *x;
+    Staff *y;
+    Management_system a,b;
+    int n,m; cin>>n>>m;
+    For(i,0,n){
+        x[i].input();
+    }
+    For(i,0,n){
+        x[i].output();
+    }
+}

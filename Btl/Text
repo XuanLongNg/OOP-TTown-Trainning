@@ -1,0 +1,58 @@
+___________________________________________________________
+|        -------Class con người gồm có----------          |
+|                                                         |
+|- tên                                                    |
+|- ngày sinh                                              |
+|- quê quán                                               |
+|- email                                                  |
+|_________________________________________________________|
+|+ các hàm setter,getter                                  |
+|+ hàm nhập, xuất                                         |
+|_________________________________________________________|
+___________________________________________________________
+|       -----Class khách hàng kế thừa con người------     |
+|                                                         |
+|- điểm tích lũy         |
+|_________________________________________________________|
+|+ các hàm setter,getter                                  |
+|+ hàm nhập, xuất                                         |
+|_________________________________________________________|
+___________________________________________________________  
+|      ------Class Nhân viên kế thừa con người-------     |
+|                                                         |
+|- Lương cơ bản                                           |
+|- Lương làm thêm theo giờ                                |
+|- Tổng số lương                                          |
+|- Chức vụ                                                |
+|- Ngày bắt đầu vào làm việc                              |
+|_________________________________________________________|
+|+ các hàm setter,getter                                  |
+|+ hàm nhập, xuất                                         |
+|_________________________________________________________|
+Về class khách hàng có lưu ý sau:
++ điểm tích lũy bằng tổng số điểm có trong mỗi mặt hàng
+Về class nhân viên có lưu ý sau:
++ Lương cơ bản:
+quy định theo chức vụ:
+Nhân viên pha chế: 35k/1h
+Nhân viên bán hàng: 30k/1h
+Nhân viên phục vụ: 30k/1h
+Quản lý: 60k/1h
+Kế toán: 50k/1h
+Chủ đầu tư: 100k/1h
+quy định theo số năm làm việc:
+Làm việc được 1 năm: +5% lương cơ bản năm trước/1h
+Làm việc được 2-3 năm: +6% lương cơ bản năm trước/1h
+Làm việc được 4 năm: +7% lương cơ bản năm trước/1h
+Làm việc được 5 năm: +10% lương cơ bản năm trước/1h
+Làm việc trên 5 năm: mỗi năm +12% lương cơ bản năm trước.
++ Lương làm thêm theo giờ( tức quá 8h 1 ngày):
+quy định theo chức vụ:
+Nhân viên pha chế: +5% Lương cơ bản/1h
+Nhân viên bán hàng: +5% Lương cơ bản/1h
+Nhân viên phục vụ: +5% Lương cơ bản/1h
+Quản lý: +6% Lương cơ bản/1h
+Kế toán: +6% Lương cơ bản/1h
+Chủ đầu tư: +0% Lương cơ bản/1h
++ Tổng số lương: =Lương cơ bản+ Lương làm thêm theo giờ
++ Ngày bắt đầu vào làm việc
