@@ -2,42 +2,15 @@
 #include "Customer.cpp"
 #include "Staff.cpp"
 #include "Management system.cpp"
+#include "input_output_file.cpp"
+#include <conio.h>
 Management_system a;
-/*
-int main(){
-    Person a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com"),b;
-    cin>>b;
-    cout<<a<<b;
+void Go(){
+	printf("\nPress ESC to end program or Press any key to continue...\n");
+	char m;
+	m=getch();
+	if(m==27) exit(0);
 }
-*/
-/*
-int main(){
-    Customer a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com",100),b;
-    vector<Customer> customers;
-    int n; cin>>n;
-    Customer k;
-    For(i,0,n){
-        k.input();
-        k.Set_Accumulated_points(i);
-        customers.push_back(k);
-    }
-    cout<<"------------------Top 10-----------------\n";
-    customers=Customer::Top10_customers(customers);
-    For(i,0,n){
-        cout<<"Top "<<i+1<<":"<<endl;
-        customers[i].output();
-    }
-    
-}
-*/
-/*
-int main(){
-    Staff a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com","Nhan vien pha che"),b;
-    a.output();
-    b.input();
-    b.output();
-}
-*/
 void Them_khach_hang(){
 	Customer x;
 	x.input();
@@ -66,6 +39,19 @@ void FindPosition(){
 		k[i].output();
 	}
 }
+void Find_max(){
+	Customer k;
+	k=a.Find_the_customer_max_points();
+	k.output();
+}
+void Find_Top10(){
+	vector<Customer> k;
+	k=a.Top10_customers();
+	For(i,0,k.size()){
+		cout<<"Khach hang thu "<<i+1<<":"<<endl;
+		k[i].output();
+	}
+}
 void dichvu(){
 	string line(62,'_'),line1(60,'_'),line2(26,' '),line3(15,' '),line4(10,' '),line5(5,' '),line6(35,' ');
 	cout<<line<<endl;
@@ -79,24 +65,39 @@ void dichvu(){
 	cout<<"|"<<line5<<"6. Khach hang co diem tich luy cao nhat "<<line3<<"|"<<endl;
 	cout<<"|"<<line5<<"7. Top 10 khach hang co diem tich luy cao nhat    "<<line5<<"|"<<endl;
 	cout<<"|"<<line1<<"|"<<endl;
-	cout<<"Nhap lua chon cua ban: ";
-	int h; cin>>h;
-	switch(h){
-		case 1:
-			Them_khach_hang();
-			break;
-		case 2:
-			Them_nhan_vien();
-			break;
-		case 3:
-			Xem_thong_tin_all_Cus();
-		case 4:
-			Xem_thong_tin_all_Sta();
-		case 5:
-			FindPosition();
-	}
-	cout<<"Done!"<<endl;
+	int h=1; 
+	while(h){
+		cout<<"Nhap lua chon cua ban: ";
+		cin>>h;
+		switch(h){
+			case 1:
+				Them_khach_hang();
+				break;
+			case 2:
+				Them_nhan_vien();
+				break;
+			case 3:
+				Xem_thong_tin_all_Cus();
+				break;
+			case 4:
+				Xem_thong_tin_all_Sta();
+				break;
+			case 5:
+				FindPosition();
+				break;
+			case 6:
+				Find_max();
+				break;
+			case 7:
+				Find_Top10();
+				break;
+			default:
+				cout<<"Vui long nhap lai"<<endl;
+				break;
+		}
+		cout<<"Done!"<<endl;
+		Go();
+  	}
 }
 int main(){
-	dichvu();
 }
