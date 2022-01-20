@@ -14,6 +14,12 @@ class Management_system:public Customer,public Staff{
     Customer Find_the_customer_max_points();
     vector<Customer> Top10_customers();
     vector<Staff> Find_Position(string k);
+    void input();
+    void output();
+    void inputCus();
+    void inputSta();
+    void outputCus();
+    void outputSta();
 };
 bool sort_by_point(Customer a,Customer b){ return a.Get_Accumulated_points()>b.Get_Accumulated_points();}
 Customer Management_system::Find_the_customer_max_points(){
@@ -45,4 +51,36 @@ vector<Staff> Management_system::Find_Position(string k){
         h.push_back(staffs[i]);
     }
     return h;
+}
+void Management_system::inputCus(){
+    int n;
+    cout<<"Nhap so luong khac hang: "<<endl;
+    cin>>n;
+    For(i,0,n){
+        customers[i].input();
+    }
+}
+void Management_system::inputSta(){
+    int m;
+    cout<<"Nhap so luong nhan vien: "<<endl;
+    cin>>m;
+    For(i,0,m){
+        staffs[i].input();
+    }
+}
+void Management_system::input(){
+    inputCus();
+    inputSta();
+}
+void Management_system::outputCus(){
+    cout<<"Danh sach so luong hang hang"<<endl;
+    For(i,0,customers.size()) customers[i].output();
+}
+void Management_system::outputSta(){
+    cout<<"Danh sach so luong nhan vien"<<endl;
+    For(i,0,staffs.size()) staffs[i].output();
+}
+void Management_system::output(){
+    outputCus();
+    outputSta();
 }

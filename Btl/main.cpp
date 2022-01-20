@@ -31,20 +31,23 @@ int main(){
 */
 /*
 int main(){
-    Staff a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com",1000000,10,3*20000*30,10000000,"Nhan Vien","12/1/2020"),b;
+    Staff a("Nguyen Xuan Long","19/11/2002","Van Ha-Dong Anh-Ha Noi","ngxuanlong2k2@gmail.com","Nhan vien pha che"),b;
     a.output();
+    b.input();
     b.output();
 }
 */
+
 int main(){
     Customer *x;
     Staff *y;
-    Management_system a,b;
     int n,m; cin>>n>>m;
-    For(i,0,n){
-        x[i].input();
+    x=new Customer[n];
+    y=new Staff[m];
+    For(i,0,m){
+        y[i].input();
     }
-    For(i,0,n){
-        x[i].output();
+    For(i,0,m){
+        y[i].output();
     }
 }

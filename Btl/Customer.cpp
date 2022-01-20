@@ -1,5 +1,6 @@
 #include "Person.cpp"
 #include <vector>
+#pragma once
 class Customer:public Person{
     private:
     int Accumulated_points;
